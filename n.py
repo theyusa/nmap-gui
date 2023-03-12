@@ -20,9 +20,9 @@ def sorgula():
     #pb.start
     window=Toplevel(tk)
     window.title("nmap")
-    window.geometry("530x400")
-    log=Text(window,width=65,height=20)
-    log.place(x=2,y=20)
+    window.geometry("615x350")
+    log=Text(window,width=75,height=20)
+    log.pack()
     log.bind("<Key>", lambda e: "break")
     hedefip=e1.get()
 
