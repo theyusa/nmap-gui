@@ -4,20 +4,9 @@ import os
 import tkinter as tk
 from tkinter import ttk
 tk=Tk()
-tk.title("TheYusa")
+tk.title("nmap-gui")
 tk.geometry("300x200")
-"""
-pb= ttk.Progressbar(tk,orient="horizontal",
-                    mode="determinate",
-                    length=320)
-pb.place(x=2,y=60)
-
-bt2= Button(tk, text="sogula",command=pb.start)
-bt2.place(x=300,y=60)
-"""
-
 def sorgula():
-    #pb.start
     window=Toplevel(tk)
     window.title("nmap")
     window.geometry("615x350")
@@ -35,7 +24,6 @@ def sorgula():
         ac = open("nmap.txt","r")
         icerik=ac.read()
         log.insert(END,icerik)
-        #pb.stop
     else:
         sorgula()
         os.remove("nmap.txt")
