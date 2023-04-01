@@ -19,7 +19,9 @@ def sorgula():
     de1=arg1.get()
     de2=arg2.get()
     de3=arg3.get()
-    os.system("nmap -sS -sV {} {} {} {} -oN nmap.txt {}".format(de,de1,de2,de3,hedefip))
+    de4=arg4.get()
+    de5=arg5.get()
+    os.system("nmap -sS -sV {} {} {} {} {} {} -oN nmap.txt {}".format(de,de1,de2,de3,de4,de5,hedefip))
     if os.path.exists("nmap.txt"):
         ac = open("nmap.txt","r")
         icerik=ac.read()
@@ -34,13 +36,15 @@ arg=StringVar()
 arg1=StringVar()
 arg2=StringVar()
 arg3=StringVar()
+arg4=StringVar()
+arg5=StringVar()
 c1 = Checkbutton(tk, text = "T4", 
 					variable = arg, 
 					onvalue = "-T4", 
 					offvalue = "",
                     
 					)
-c1.place(x=0,y=30)
+c1.place(x=0,y=35)
 c4 = Checkbutton(tk, text = "Fast", 
 					variable = arg, 
 					onvalue = "-F", 
@@ -70,11 +74,25 @@ c5 = Checkbutton(tk, text = "vuln",
 					)
 c5.place(x=0,y=150)
 
-    
+c6 = Checkbutton(tk, text = "script", 
+					variable = arg4, 
+					onvalue = "-sC", 
+					offvalue = "",
+                    
+					)
+c6.place(x=130,y=35)
+
+c7 = Checkbutton(tk, text = "online host", 
+					variable = arg5, 
+					onvalue = "-Pn", 
+					offvalue = "",
+                    
+					)
+c7.place(x=130,y=60)
 #label
 l1=Label(tk,text="nmap")
 l1.place(x=2,y=10)
-#veri girişi
+#veri girisi
 e1=Entry(tk,width=20)
 e1.place(x=50,y=10)
 #sorgula
